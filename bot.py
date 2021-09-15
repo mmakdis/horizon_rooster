@@ -11,11 +11,16 @@ import scraper
 from datetime import datetime, timedelta
 from telegram import Update, ForceReply
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
+import time
+import os
 
 # Enable logging
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO
 )
+
+os.environ['TZ'] = 'Europe/Amsterdam'
+time.tzset()
 
 logger = logging.getLogger(__name__)
 
